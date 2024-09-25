@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- CURSOR STYLING  START-->
+
+    <!-- <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div> -->
+
+    <!-- CURSOR STYLIYINGG END  -->
+    <div class="full-cover">
+
+    <div class="background-image"></div>
+
+    <div class="quiz-title">Quiz Quest</div>
+
+    <div class="container">
+        <h1 id="container-h">Quiz Website</h1>
+        <p id="container-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Accusamus, asperiores fuga ex suscipit eveniet, voluptatem 
+            nihil quia, est dolor cupiditate sint quod ipsum ut magni.</p>
+         <button class="start-quiz-button">Start Quiz</button>
+
+
+         <dialog class="quizGuid">
+            <h1>QUIZ GUIDE</h1>
+            <p>1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus mollitia totam laboriosam.</p>
+            <p>2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus mollitia totam laboriosam.</p>
+            <p>3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus mollitia totam laboriosam.</p>
+            <p>4. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus mollitia totam laboriosam.</p>
+            <p>5. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus mollitia totam laboriosam.</p>
+            <button id="close-btn">Exit Quiz</button>
+            <button id="continue-btn">Continue</button>
+        </dialog>
+    </div>
+
+
+    <!-- MODAL POP form COUNT-DOWN  -->
+ 
+    <!-- <form action="https://api.web3forms.com/submit" method="POST">
+        <dialog class="modal-form" id="form-dialog">
+        <input type="hidden" name="access_key" value="de0f6d89-9192-4153-9ce8-3124b680c078">
+
+        <div class="form-group">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Ali Khan" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Enter Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+        </div>
+    
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Submit</button>
+        </div>
+    </dialog>
+</form> -->
+
+<dialog id="modal-pop" class="dilog">
+    <p id="countdown-text">Your Quiz Starts In...</p>
+    <p id="countdown-number">5</p>
+    <p>seconds</p>
+</dialog>
+
+       <!-- QUESTIONS ADDING IN QUIZ AAP  -->
+            
+       <dialog id="quet-cover" class="quest-cover">
+        <p id="countDown">1:40</p>
+
+        <h1>Let's Play a quiz</h1>
+        <div class="question"></div>
+        <div class="choice"></div>
+        <button class="next-btn" style="position: relative; top: -15px;">Next</button>
+      </dialog>
+
+      <dialog id="score" class="score">
+
+             <h1 id="score-h"></h1>
+             <button id="close-btn">Exit Quiz</button>
+             
+
+
+
+      </dialog>
+
+        </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
