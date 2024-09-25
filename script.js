@@ -193,3 +193,13 @@ function updateCountdown() {
 // Update the countdown every 1 second (1000 milliseconds)
 // const countdownInterval = setInterval(updateCountdown, 1000);
 
+
+const everyCLose = document.querySelector("#close-Btn");
+
+everyCLose.addEventListener("click" , () => {
+    closeEvery ();
+})
+
+function closeEvery () {
+    scoreDialog.close();
+}
