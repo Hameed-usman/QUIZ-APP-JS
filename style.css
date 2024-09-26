@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; /* Ensures padding and borders are included in element's total width/height */
+    box-sizing: border-box; 
 }
 
 body, html {
@@ -9,9 +9,9 @@ body, html {
     overflow-y: hidden;
 }
 
-/* CURSOR STYLINS STRT  */
+                  /*=========== CURSOR STYLINS STRT  ==========*/
 
-.cursor-dot {
+/* .cursor-dot {
     width: 20px;
     height: 20px;
     background: radial-gradient(circle, #ffeb3b, #f57f17);
@@ -20,16 +20,16 @@ body, html {
   }
   
   /* Styling for the Cursor Outline */
-  .cursor-outline {
+  /* .cursor-outline {
     width: 60px;
     height: 60px;
     border: 2px solid rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.1);
     transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
-  }
+  } */
   
   /* Basic cursor styling */
-  .cursor-dot,
+  /* .cursor-dot,
   .cursor-outline {
     position: fixed;
     top: 0;
@@ -38,10 +38,10 @@ body, html {
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
-  }
+  } */
   
   /* Animation effect for hovering over elements */
-  .cursor-hover-effect .cursor-dot {
+  /* .cursor-hover-effect .cursor-dot {
     transform: scale(1.5);
     background: radial-gradient(circle, #ff5722, #ffeb3b);
     box-shadow: 0 0 25px 8px rgba(255, 87, 34, 0.9);
@@ -52,9 +52,9 @@ body, html {
     height: 80px;
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.2);
   }
-  
+   */
   /* Smooth transition effect for movement */
-  @keyframes cursorMove {
+  /* @keyframes cursorMove {
     0% {
       opacity: 0.7;
       transform: translate(-50%, -50%) scale(1);
@@ -63,15 +63,20 @@ body, html {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1.2);
     }
-  }
+  } */
   
   /* Animation applied when moving the cursor */
-  .cursor-dot,
+  /* .cursor-dot,
   .cursor-outline {
     animation: cursorMove 0.3s ease;
-  }
+  }  */
 
-/* CURSOR STYLINY END  */
+
+                  /*===========     CURSOR STYLINY END  ==================*/
+
+
+
+
 .background-image {
     position: fixed;
     top: 0;
@@ -85,6 +90,9 @@ body, html {
     z-index: -1; 
 }
 
+
+              /* =====================QUIZ QUEST  HEADING STYLING  =========================*/
+
 .quiz-title {
     position: absolute;
     top: 30px;
@@ -96,17 +104,27 @@ body, html {
     text-shadow: 2px 2px 4px #ADD8E6; 
 }
 
+
+                        /*========== QUIZ QUEST STYLING FINISHED =============== */
+
+
+
+
+
+
+              /* ----------  COVER CONTAINER  STYLING (QUIZ WEB, BUTTON ETC..)  ----- --  */
+
 .container {
-    height: auto; /* Allow height to adjust */
-    width: 90%; /* Use percentage for responsiveness */
-    max-width: 600px; /* Set a max width for larger screens */
+    height: auto; 
+    width: 90%; /* Use percentage for BETTER responsiveness  OUTPTU */
+    max-width: 600px;   /*THIS IS FOR LARGER SCREEN*/
     justify-content: center;
     text-align: center;
     position: relative;
-    margin: 150px auto; /* Center the container */
-    padding: 20px; /* Add padding */
-    /* background-color: rgba(0, 0, 0, 0.7); Dark background for contrast */
-    border-radius: 10px; /* Rounded corners */
+    margin: 150px auto; 
+    padding: 20px; 
+    /* background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px;  */
 }
 
 #container-h {
@@ -164,68 +182,76 @@ body, html {
     box-shadow: 0 2px 10px rgba(255, 105, 180, 0.4); 
 }
 
-/* Media Queries for Responsiveness */
+/* Responsiveness */
 @media (max-width: 768px) {
     .quiz-title {
-        font-size: 24px; /* Smaller title for smaller screens */
-        left: 20px; /* Adjust position */
+        font-size: 24px; 
+        left: 20px; 
     }
 
     #container-h {
-        font-size: 36px; /* Adjust heading size */
+        font-size: 36px;
     }
 
     #container-p {
-        font-size: 16px; /* Smaller paragraph text */
-        padding: 10px; /* Adjust padding */
+        font-size: 16px; 
+        padding: 10px;
     }
 
     .start-quiz-button {
-        font-size: 16px; /* Smaller button text */
-        padding: 10px 20px; /* Adjust padding */
+        font-size: 16px; 
+        padding: 10px 20px; 
     }
 }
 
 @media (max-width: 480px) {
     .quiz-title {
-        font-size: 20px; /* Further reduce title size */
-        left: 10px; /* Adjust position */
+        font-size: 20px; 
+        left: 10px; 
     }
 
     #container-h {
-        font-size: 28px; /* Adjust heading size */
+        font-size: 28px; 
     }
 
     #container-p {
         font-size: 15px;
-        padding: 5px /* Adjust padding */
+        padding: 5px 
     }
 
     .start-quiz-button {
         font-size: 15px;
-        padding: 11px 15px; /* Adjust padding */
+        padding: 11px 15px; 
     }
 }
 
-/* QUIZ GUIDLEINS SECTION  */
+               /* ----------  COVER CONTAINER  STYLING (QUIZ WEB, BUTTON ETC..) END HERE ----- --  */
+
+
+
+                
+
+
+
+/* QUIZ GUIDLEINS SECTION STYLING START  */
 
 .quizGuid {
-    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    padding: 20px; /* Reduced padding for a more compact design */
-    margin: 20px auto; /* Centered with margin */
-    max-width: 400px; /* Maximum width for a neater appearance */
-    text-align: left; /* Align text to the left */
+    /* background-color: rgba(255, 255, 255, 0.9);  */
+    border-radius: 15px; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    margin: 20px auto; 
+    max-width: 400px; 
+    text-align: left; 
     margin-top: 50px;
 }
 
 .quizGuid h1 {
-    font-size: 24px; /* Smaller font size for the heading */
-    color: #ff69b4; /* Bright pink color for the heading */
-    text-align: center; /* Center the heading */
-    margin-bottom: 15px; /* Space below the heading */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 24px; 
+    color: #ff69b4; 
+    text-align: center; 
+    margin-bottom: 15px; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
 
 .quizGuid p {
@@ -243,7 +269,7 @@ body, html {
 }
 
 .quizGuid button {
-    background-color: #ff69b4; /* Bright pink background */
+    background-color: #ff69b4; 
     color: #fff; /* White text color */
     padding: 10px 20px; /* Comfortable padding */
     border: none; /* Remove default border */
@@ -536,7 +562,7 @@ dialog button:hover {
 
 } */
 
-/* GPT START  */
+/* question START  */
 
 #quet-cover {
     background: linear-gradient(135deg, #FFB6C1, #FFD700);
@@ -557,7 +583,6 @@ dialog button:hover {
     top: -25px;
 }
 
-/* GPT END  */
 /* Styling for the Quiz Heading */
 #quet-cover h1 {
     color: #ff6b6b;
@@ -643,43 +668,7 @@ dialog button:hover {
     }
 }
 
-/* @media (max-width: 480px) {
-    #quet-cover {
-        padding: 20px;
-        max-width: 75%;
-        margin: 20px auto;
-        position: relative;
-        top: 90px;
-    }
-    
-    #quet-cover h1 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
 
-    .question {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    .choice div {
-        padding: 10px;
-        margin: 6px 0;
-        border-radius: 6px;
-    }
-
-    .next-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    #countDown {
-        font-size: 0.5rem;
-    }
-} */
-
-/* Correct answer styling */
-/* Correct answer styling */
 .correct {
     background-color: green;
     color: white;
@@ -694,27 +683,158 @@ dialog button:hover {
 
 /* SCORE BOARD */
 
+/* Overall Styling for the Score Dialog */
 .score {
-    background: linear-gradient(135deg, #FFB6C1, #FFD700);  /* Soft gradient for background */
-    color: #333;  /* Dark text for contrast */
-    font-family: 'Poppins', sans-serif;  /* Clean font */
-    font-size: 1.5rem;  /* Reasonable font size */
-    font-weight: bold;
-    text-align: center;  /* Center the text */
-    padding: 20px;  /* Padding for breathing space */
-    border-radius: 20px;  /* Rounded corners for a soft look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Soft shadow for depth */
-    width: 300px;
-    margin: 20px auto;  /* Center on the page */
-    transition: transform 0.3s ease-in-out;  /* Smooth transition */
+    position: relative;
+    background: rgba(17, 17, 17, 0.8);  /* Dark semi-transparent background */
+    color: #00FFFF;  /* Neon cyan text */
+    font-family: 'Orbitron', sans-serif;  /* Futuristic font */
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 40px 30px;  /* Spacious padding */
+    border-radius: 20px;  /* Rounded corners */
+    border: 2px solid #00FFFF;  /* Neon border */
+    width: 400px;  /* Wider for an impactful display */
+    margin: 50px auto;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF;  /* Glowing box shadow */
+    z-index: 1;
 }
 
-/* Hover Effect */
-.score:hover {
-    transform: scale(1.05);  /* Slightly enlarge on hover */
-    background: linear-gradient(135deg, #ff1493, #ff6b6b);  /* Change background on hover */
-    color: white;  /* Invert text color for a bright effect */
+/* Neon Border Animation */
+@keyframes neonBorder {
+    0% { border-color: #00FFFF; }
+    50% { border-color: #FF00FF; }
+    100% { border-color: #00FFFF; }
 }
+
+.score {
+    animation: neonBorder 5s ease-in-out infinite;  /* Cycles between neon colors */
+}
+
+/* Particle Animation Background */
+.score::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/5VowvBr.png') repeat;  /* Background particle effect */
+    opacity: 0.2;
+    z-index: -1;  /* Behind the content */
+    animation: particles 15s linear infinite;
+}
+
+@keyframes particles {
+    0% { background-position: 0 0; }
+    100% { background-position: 800px 600px; }
+}
+
+/* Heading Styling */
+#score-h {
+    font-size: 2.5rem;  /* Increased font size */
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #FF00FF;  /* Neon text shadow */
+}
+
+/* Button Styling with Glowing Effect */
+#close-Btn {
+    background: transparent;
+    border: 2px solid #FF00FF;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+#close-Btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background: rgba(255, 0, 255, 0.1);  /* Soft glow inside */
+    z-index: -1;
+    box-shadow: 0 0 20px #FF00FF, 0 0 30px #FF00FF, 0 0 40px #FF00FF;  /* Glowing hover effect */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Button Hover Effect */
+#close-Btn:hover {
+    color: #FF00FF;
+    transform: scale(1.1);
+}
+
+#close-Btn:hover::before {
+    opacity: 1;  /* Show glowing effect */
+}
+
+/* 3D Perspective Effect on Hover */
+.score:hover {
+    transform: perspective(600px) rotateX(10deg) rotateY(-5deg);  /* 3D tilt */
+}
+
+/* Wave Animation for Background */
+.score::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(45deg, transparent 50%, #FF00FF 50%);
+    z-index: 0;
+    animation: wave 4s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes wave {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 100px; }
+}
+
+@media only screen and (max-width: 480px) {
+    .score {
+        width: 75%;
+        padding: 26px 15px;
+        font-size: 1.3rem;
+        position: absolute;
+        top: 116px;/* Slightly smaller base font */
+    }
+
+    #score-h {
+        font-size: 1.8rem;  /* Scale down heading */
+        letter-spacing: 1px;  /* Tighten letter spacing */
+        margin-bottom: 15px;  /* Less margin */
+    }
+
+    #close-Btn {
+        font-size: 1rem;  /* Smaller button text */
+        padding: 10px 20px;  /* Compact padding */
+        border-radius: 15px;  /* Smaller border radius */
+    }
+
+    /* Text Shadow and Box Shadow Adjustments for Smaller Screens */
+    .score {
+        box-shadow: 0 0 10px #00FFFF, 0 0 15px #FF00FF, 0 0 20px #FF00FF;
+    }
+
+    #score-h {
+        text-shadow: 0 0 5px #00FFFF, 0 0 10px #FF00FF;
+    }
+}
+
 
 
 /* TIMER STYLING  */
@@ -732,7 +852,7 @@ dialog button:hover {
     margin: 10px 0;
     animation: pulse 1.5s infinite;  /* Pulse animation to keep it dynamic */
     position: absolute;
-    left: 390px;
+    left: 383px;
     top: 10px;
 }
 
@@ -787,10 +907,5 @@ dialog button:hover {
 
     }
 }
-/* Pulse Animation */
-/* @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-} */
+
 

@@ -1,7 +1,9 @@
+// alert("Helooooo...");
 
 
 const quizGuid = document.querySelector(".quizGuid");
 const startQuizBtn = document.querySelector(".start-quiz-button");
+// const quizGuid = document.querySelector(".quizGuid");
 const closeBtn = document.querySelector("#close-btn");
 const container = document.querySelector(".container");
 
@@ -15,29 +17,24 @@ closeBtn.addEventListener("click", () => {
     container.classList.remove("blur"); // Remove the blur effect from the container
 });
 
-// FORM modal POP DIALOG
 
-// const continueBtn = document.querySelector("#continue-btn");
-// const formDialog = document.querySelector("#form-dialog");
+                     //========= QUIZ GUIDE OR RULE SECTION JS START TILL EXIT BUTTON =============
 
-// continueBtn.addEventListener("click", () => {
-//     formDialog.showModal();
-// });
 
-//  COUNTDOWN POPUP 
+
+
+// --------------- COUNTDOWN POPUP JS WITH TARGET CONTINUE BUTTON-----------
 
 const submitBtn = document.getElementById("continue-btn");
 const modalPop = document.getElementById("modal-pop");
 const countdownElement = document.getElementById("countdown-number");
-const questShow = document.querySelector(".quet-cover");
-const cover = document.getElementsByClassName("full-cover");
+const questShow = document.querySelector(".quet-cover");  // FOR QUESTION SHOW DIRECTLY AFTER 5 SECOND COUNTDOWN TIME NOT FOR COUNT DOWN
 
 
 submitBtn.addEventListener("click", () => {
     modalPop.showModal();  
     let interval = 5;  
-    countdownElement.innerText = interval;  
-    let countdownTimer = setInterval(() => {
+    let countdownTimer = setInterval(() => {    //NEW CONCEPT OF ASYNC
         interval--;  
         countdownElement.innerText = interval; 
 
@@ -45,30 +42,35 @@ submitBtn.addEventListener("click", () => {
             clearInterval(countdownTimer);  
             modalPop.close();
             quizGuid.close(); 
-            // showQuestions ();
-            questContainerCover.showModal();
-            const countdownInterval = setInterval(updateCountdown, 1000);
-            updateCountdown ();
 
+            // THE UPDATE COUNTDOWN FUNCTION IS FOR THE QUESTION TIMER WHICH APPEARS DIRECTLY AFTER THE COUNTDOWN TIME 
+            questContainerCover.showModal();
+            // const countdownInterval = setInterval(updateCountdown, 1000);
+            // updateCountdown ();  // UPDATE COUNTDOWN FUNCTION DECLARED IN LINE 169 
 
         }
     }, 1000);
 });
 
 
-// QUESTIONS JAVASCRIPT 
+
+    //  ......... // --------------- COUNTDOWN POPUP JS WITH TARGET CONTINUE BUTTON- END  ----------
+
+ 
 
 
+// QUESTIONS JAVASCRIPT TO SHOW THE QUESTIONS 
 
-// Select elements
-let questContainerCover = document.querySelector(".quest-cover");
+let questContainerCover = document.querySelector(".quest-cover"); //THIS WILL SHOW TE QUESTION (questContainerCover.show())
 let questions = document.querySelector(".question");
 let choices = document.querySelector(".choice");
 let nextBtn = document.querySelector(".next-btn");
-let scoreDialog = document.getElementById("score");
-let scoreHeader = document.getElementById("score-h");
 
-let score = 0; // Initialize score
+
+let scoreDialog = document.getElementById("score");  // THIS BOTH IS FOR TO SHOW THE LAST SCORE 
+let scoreHeader = document.getElementById("score-h");     // OF TEHE QUIZ 
+
+let score = 0; //CALCULTATION OF SCORE IN THE LAST 
 const quiz = [
     { question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyper Tool Markup Language"], answer: "Hyper Text Markup Language" },
     { question: "Which HTML tag is used to define an internal style sheet?", options: ["<css>", "<style>", "<script>", "<link>"], answer: "<style>" },
@@ -85,30 +87,35 @@ const quiz = [
 let currentQuizIndex = 0;
 let quizCompleted = false; // Track whether the quiz is completed or not
 
-// Function to display the current question and its options
+// THIS IS Function to display the current question and its options AT A TIME....
 const showQuestions = () => {
     const storedQuest = quiz[currentQuizIndex];
     questions.innerText = storedQuest.question;
     choices.innerHTML = ""; // Clear previous options
 
-    // Display the options dynamically
+    // THROUGH THIS OPTIONS & QUESTIONS WILL SHOW Dynamically
     for (let i = 0; i < storedQuest.options.length; i++) {
         const currentChoice = storedQuest.options[i];
-        const createDiv = document.createElement("div");
+        const createDiv = document.createElement("div");  //  I HAVE CREATE A DIV THORUGH JS TO SHOW 4 OPTIONs
         createDiv.innerText = currentChoice;
-        createDiv.classList.add("option"); // Add class for styling if needed
+        createDiv.classList.add("option"); // AddED class for styling THORUGH JS
         choices.appendChild(createDiv);
 
         // Add click event listener to each option
-        createDiv.addEventListener("click", () => {
-            checkAnswer(currentChoice, createDiv);
+
+        createDiv.addEventListener("click", () => {  // THIS FUNCTION IS REPSONIBE FOR CHECK ANSWER WHETER IT'S CORRECT
+            checkAnswer(currentChoice, createDiv);     // OR NOT & STYLE THE TEXT RED OR GREEN ALSO "++Score"
         });
     }
 };
 
+
+
+
+
 // Function to check if the selected answer is correct or not
-const checkAnswer = (selectedOption, element) => {
-    if (quizCompleted) return; // Prevent further checking if the quiz is done
+const checkAnswer = (selectedOption, element) => {   //elemnt is the inside content of DIV 
+    if (quizCompleted) return; // Prevent further checking if the quiz is done (88)
 
     const correctAnswer = quiz[currentQuizIndex].answer;
     const allOptions = document.querySelectorAll(".option"); // Get all options
@@ -119,12 +126,12 @@ const checkAnswer = (selectedOption, element) => {
     });
 
     // Apply color changes for correct and wrong answers
-    if (selectedOption === correctAnswer) {
-        element.style.backgroundColor = "green"; // Correct answer styling
+    if (selectedOption === correctAnswer) {            
+        element.style.backgroundColor = "green"; 
         element.style.color = "white";
-        score++; // Increment score for a correct answer
+        score++;  // (73)
     } else {
-        element.style.backgroundColor = "red"; // Wrong answer styling
+        element.style.backgroundColor = "red"; 
         element.style.color = "white";
     }
 
@@ -137,19 +144,26 @@ const checkAnswer = (selectedOption, element) => {
     });
 };
 
-// Functionality for the Next button
-nextBtn.addEventListener("click", () => {
-    if (currentQuizIndex < quiz.length - 1) {
-        currentQuizIndex++;
-        showQuestions();
-    } else {
-        resultScore(); // Show the final score
-    }
-});
+
+
+
+                // Functionality for the Next button
+
+                
+    nextBtn.addEventListener("click", () => {
+        // Check if we are not at the last question
+        if (currentQuizIndex < quiz.length - 1) {  
+            currentQuizIndex++; // Move to the next question
+            showQuestions(); // Display the next question (91)
+            } else {
+             // If no more questions, show the final score
+            resultScore();
+           }
+                });
 
 // Function to display the result score
 const resultScore = () => {
-    quizCompleted = true; // Mark the quiz as completed
+    quizCompleted = true; // Mark the quiz as completed (88)
     questContainerCover.style.display = "none"; // Hide the quiz
     scoreHeader.innerText = `Your final score is: ${score} out of ${quiz.length}`; // Display the score
     scoreDialog.showModal(); // Show the score dialog
@@ -160,13 +174,23 @@ showQuestions();
 
 
 // COUNTDOWN TIMES FUNCTIIONALTIY 
+
 // Set initial time (1 minute 40 seconds)
 let minutes = 1;
 let seconds = 40;
 
 // Function to update the countdown
 function updateCountdown() {
-  // Decrease seconds
+  // Check if the time is already 0 before decrementing
+  if (minutes === 0 && seconds === 0) {
+    clearInterval(countdownInterval); // Stop the countdown
+    document.getElementById('countDown').innerHTML = "Time's up!";
+    resultScore();
+
+    return; // Exit the function
+  }
+
+  // Decrease seconds ONE BY ONE
   seconds--;
 
   // If seconds are less than 0, decrease minutes and reset seconds to 59
@@ -175,20 +199,14 @@ function updateCountdown() {
     minutes--;
   }
 
-  // Stop the countdown when time reaches 0
-  if (minutes <= 0 && seconds <= 0) {
-    clearInterval(countdownInterval);
-    document.getElementById('countDown').innerHTML = "Time's up!";
-    return;
-  }
-
-//   // Format minutes and seconds to always show two digits
+  // Format and display the updated time
   const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
   const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-
-//   // Display the updated countdown
-  document.getElementById('countDown').innerHTML = `${formattedMinutes}:${formattedSeconds}`;
+  document.getElementById('countDown').innerHTML = formattedMinutes + ":" + formattedSeconds;
 }
+
+// Set an interval to call updateCountdown every second
+const countdownInterval = setInterval(updateCountdown, 1000);   //(183)
 
 // Update the countdown every 1 second (1000 milliseconds)
 // const countdownInterval = setInterval(updateCountdown, 1000);
@@ -202,4 +220,5 @@ everyCLose.addEventListener("click" , () => {
 
 function closeEvery () {
     scoreDialog.close();
+    container.classList.remove("blur");
 }
