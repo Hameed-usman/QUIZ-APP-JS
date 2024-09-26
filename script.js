@@ -31,10 +31,12 @@ const countdownElement = document.getElementById("countdown-number");
 const questShow = document.querySelector(".quet-cover");  // FOR QUESTION SHOW DIRECTLY AFTER 5 SECOND COUNTDOWN TIME NOT FOR COUNT DOWN
 
 
+let countdownInterval; // Declare countdownInterval here to use it later
+
 submitBtn.addEventListener("click", () => {
     modalPop.showModal();  
     let interval = 5;  
-    let countdownTimer = setInterval(() => {    //NEW CONCEPT OF ASYNC
+    let countdownTimer = setInterval(() => {
         interval--;  
         countdownElement.innerText = interval; 
 
@@ -43,11 +45,14 @@ submitBtn.addEventListener("click", () => {
             modalPop.close();
             quizGuid.close(); 
 
-            // THE UPDATE COUNTDOWN FUNCTION IS FOR THE QUESTION TIMER WHICH APPEARS DIRECTLY AFTER THE COUNTDOWN TIME 
+            // Show the question container after the countdown ends
             questContainerCover.showModal();
-            // const countdownInterval = setInterval(updateCountdown, 1000);
-            // updateCountdown ();  // UPDATE COUNTDOWN FUNCTION DECLARED IN LINE 169 
 
+            // Start and display the countdown for 1:40 only after showing the questions
+            minutes = 1; // Reset minutes
+            seconds = 40; // Reset seconds
+            updateCountdown(); // Call to display the initial countdown
+            countdownInterval = setInterval(updateCountdown, 1000); // Start the countdown interval here
         }
     }, 1000);
 });
@@ -112,7 +117,6 @@ const showQuestions = () => {
 
 
 
-
 // Function to check if the selected answer is correct or not
 const checkAnswer = (selectedOption, element) => {   //elemnt is the inside content of DIV 
     if (quizCompleted) return; // Prevent further checking if the quiz is done (88)
@@ -170,8 +174,7 @@ const resultScore = () => {
 };
 
 // Show the first question when the page loads
-showQuestions();
-
+// showQuestions();
 
 // COUNTDOWN TIMES FUNCTIIONALTIY 
 
@@ -206,7 +209,8 @@ function updateCountdown() {
 }
 
 // Set an interval to call updateCountdown every second
-const countdownInterval = setInterval(updateCountdown, 1000);   //(183)
+// const countdownInterval = setInterval(updateCountdown, 1000);   //(183)
+showQuestions();
 
 // Update the countdown every 1 second (1000 milliseconds)
 // const countdownInterval = setInterval(updateCountdown, 1000);
