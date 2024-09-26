@@ -26,7 +26,9 @@
          <button class="start-quiz-button">Start Quiz</button>
 
 
-         <dialog class="quizGuid">
+            <!-- QUIZ RULE OR GUIDE PROTION START  -->
+
+         <dialog  class="quizGuid">
             <h1>QUIZ GUIDE</h1>
             <p>1. Make sure you have a basic understanding of HTML, CSS, and JavaScript before starting.</p>
             <p>2. Read each question carefully before selecting an answer.There are a total of 10 questions.</p>
@@ -37,6 +39,8 @@
             <button id="close-btn">Exit Quiz</button>
             <button id="continue-btn">Continue</button>
         </dialog>
+
+                    <!-- QUIZ RULE OR GUIDE PROTION END  -->
     </div>
 
 
@@ -62,20 +66,33 @@
     </dialog>
 </form> -->
 
-<dialog id="modal-pop" class="dilog">
+
+
+
+           <!-- TIME INTERVAL MODAL POP SECTION STRUCTURE ON SHOW ON CONTINUE BTN  -->
+
+
+   <dialog id="modal-pop" class="dilog">
     <p id="countdown-text">Your Quiz Starts In...</p>
     <p id="countdown-number">5</p>
     <p>seconds</p>
-</dialog>
+    </dialog>
+
+
+              <!-- TIME INTERVAL MODAL POP SECTION STRUCTURE ON SHOW ON CONTINUE BTN eND  -->
+
+
+
+
 
        <!-- QUESTIONS ADDING IN QUIZ AAP  -->
             
        <dialog id="quet-cover" class="quest-cover">
-        <p id="countDown">1:40</p>
+        <p id="countDown">1:40</p>  
 
         <h1>Let's Play a quiz</h1>
-        <div class="question"></div>
-        <div class="choice"></div>
+        <div class="question"> <!---qUESTION WILL SHOW HERRE.....---> </div>
+        <div class="choice">  <!---CHOICES WILL SHOW HERRE.....--->  </div>
         <button class="next-btn" style="position: relative; top: -15px;">Next</button>
       </dialog>
 
@@ -84,8 +101,6 @@
              <h1 id="score-h"></h1>
              <button id="close-Btn">Exit Quiz</button>
              
-
-
 
       </dialog>
 
